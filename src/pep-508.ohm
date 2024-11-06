@@ -6,7 +6,7 @@ PEP508 {
     Req = UrlReq | NameReq | RequirementsReq | ConstraintsReq
 
     NameReq = Name Extras? VersionSpec QuotedMarker?
-    UrlReq  = Name Extras? UrlSpec (space QuotedMarker)?
+    UrlReq = (Name? Extras? UrlSpec (space QuotedMarker)?) // Name is optional to support URL-only requirements
     Extras  = "[" ListOf<identifier, ","> "]"
     Name    = identifier
     identifier    = alnum identifierEnd*
